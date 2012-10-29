@@ -6,6 +6,8 @@ Quickimage was made to solve a problem I had myself. I really like sites like ra
 
 After that worked I dumped it all, made everything worse with an object oriented design and an API, put a config file there and BOOOOOM, here's some awesome thing you can use yourself! Have fun.
 
+You have no idea what this is about? Here's an example page: [images.frdnspnzr.de](http://images.frdnspnzr.de/)
+
 ## Install
 Installing Quickimage is easy: Create a new web-accessible directory. Copy all the files to this directory. Edit config.php as needed (You *must* change siteURL. You *should* change siteName. You *may* have a look at the rest). Create a subdirectory called "images" and fill it as you wish. Done.
 ## Usage
