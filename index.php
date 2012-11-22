@@ -47,9 +47,11 @@ $iterator = ImageIterator::getNew();
 				echo '">';
 				echo '<div class="image"><a href="' . $iterator->getCurrent()['link'] . '">';
 
-				//TODO Image Loader
+				//Load file via image loader if necessary
 				if (is_numeric(array_search($iterator->getCurrent()['extension'], $config->read(("useImageLoader")))))
 					echo '<img src="./imageloader.php?name=' . $iterator->getCurrent()['filename'] .'&path=' . $iterator->getCurrent()['directory'] . '" />';
+				
+				//Don't use image loader
 				else
 					echo '<img src="' . $iterator->getCurrent()['path'] . '" />';
 
@@ -63,8 +65,6 @@ $iterator = ImageIterator::getNew();
 				$iterator->next();
 			}
 
-				// if (is_numeric(array_search($fileExtension, $config['allowedExtensions'])))
-				// 	array_push($images,array("name" => $fileName, "extension" => $fileExtension, "keywords" => $keywords));
 		}
 		?>
 
