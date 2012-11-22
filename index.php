@@ -42,22 +42,23 @@ $iterator = ImageIterator::getNew();
 		} else {
 			while ($iterator->hasNext()) {
 				echo '<div class="container ';
-				for ($i = 0; $i < sizeof($iterator->getCurrent()['keywords']); $i++)
-					echo $iterator->getCurrent()['keywords'][$i] . ' ';
+				$tmp = $iterator->getCurrent();
+				for ($i = 0; $i < sizeof($tmp['keywords']); $i++)
+					echo $tmp['keywords'][$i] . ' ';
 				echo '">';
-				echo '<div class="image"><a href="' . $iterator->getCurrent()['link'] . '">';
-
-				//Load file via image loader if necessary
-				if (is_numeric(array_search($iterator->getCurrent()['extension'], $config->read(("useImageLoader")))))
-					echo '<img src="./imageloader.php?name=' . $iterator->getCurrent()['filename'] .'&path=' . $iterator->getCurrent()['directory'] . '" />';
+				echo '<div class="image"><a href="' . $tmp['link'] . '">';
 				
+				//Load file via image loader if necessary
+				if (is_numeric(array_search($tmp['extension'], $config->read(("useImageLoader")))))
+					echo '<img src="./imageloader.php?name=' . $tmp['filename'] .'&path=' . $tmp['directory'] . '" />';
+
 				//Don't use image loader
 				else
-					echo '<img src="' . $iterator->getCurrent()['path'] . '" />';
+					echo '<img src="' . $tmp['path'] . '" />';
 
 				echo '</a></div>';
 
-				echo '<input name="image_path_' . $i . '" type="text" value="' .  $config->read('siteURL') . $iterator->getCurrent()['link'] . '"
+				echo '<input name="image_path_' . $i . '" type="text" value="' .  $config->read('siteURL') . $tmp['link'] . '"
 				onClick="javascript:this.select();" />';
 
 				echo "</div>";
