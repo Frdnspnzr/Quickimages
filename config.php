@@ -78,6 +78,26 @@ $config = array(
 	 */
 	"imageLoader" => "pngLoader",
 
+	/*
+	 * The following attributes are only used if you would like to allow GifStream access (See gifstream.in)
+	 * If you just set "allowGifStream" to false everything else will not be relevant
+	 */
+	"allowGifStream" => false,
+
+	/*
+	 * License for your GifStream pictures. This is a string, so use wisely!
+	 */
+	"gifStreamLicense" => null,
+
+	/*
+	 * Unique Identifier for your GifStream. Philipp suggests UTI, I don't mind, as long as it's
+	 * globally unique. If you really can't think of one I'll just use your sites name, but that
+	 * doesn't sound very unique and you're going to hell for it. You have been warned.
+	 *
+	 * Mine, for example, is "de.frdnspnzr.friedensbilder.gifstream"
+	 */
+	"gifStreamIdentifier" => null,
+
 	)
 
 ?>
